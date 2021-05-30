@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+{{ if isset .Site.Params "description" }}
+<meta name="description" content="{{ .Site.Params.description }}">
+{{ end }}
+<section>
+  <div>
+    {{ if isset .Site.Params "paginate" }}
+      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) .Site.Params.paginate }}
+      {{ range $paginator.Pages.ByDate.Reverse }}
+          {{ .Render "summary" }}
+    {{ end }}
+  </div>
+  <div>
+              {{ partial "pagination.html" . }}
+      <!--            {{ template "_internal/pagination.html" . }} -->
+  </div>
+          {{ else }}
+              {{ range first 10 .Site.RegularPages.ByDate.Reverse }}
+                  {{ if eq .Type "post" }}
+                      {{ .Render "summary"}}
+                  {{ end }}
+              {{ end }}
+          {{ end }}
+      </div>
+  </div>
+</section>
+{{ partial "footer.html" . }}

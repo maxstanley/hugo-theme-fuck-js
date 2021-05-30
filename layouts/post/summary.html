@@ -1,0 +1,20 @@
+<section class="post-summary">
+  <h3>
+    <a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}(draft){{end}}</a>
+  </h3>
+
+  {{ partial "date_user.html" . }}
+  
+  <p>{{ .Summary }}</p>
+
+  {{ $baseurl := .Site.BaseURL }}
+  {{ if isset .Params "tags" }} {{ if len .Params.tags }}
+  <p>Tags:&nbsp;
+  {{ range $i, $e := .Params.tags }}
+      {{if $i}},&nbsp;{{end}}
+      <a href="{{ $baseurl }}{{ $.Site.LanguagePrefix }}/tags/{{ . }}">{{ . }}</a>
+      {{ end }}
+  </p>
+  {{ end }}{{ end }}
+  <p><a href="{{ .Permalink }}">Read more...</a></p>
+</section>

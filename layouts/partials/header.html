@@ -1,0 +1,11 @@
+{{ partial "head.html" . }}
+<header>
+  <nav>
+	<h1><a href="{{ .Site.BaseURL }}{{ .Site.LanguagePrefix }}">{{ .Site.Title }}</a></h1>
+	<ul>
+      <li><a href="{{ .Site.BaseURL }}tags/">Tags</a></li>
+	  <li><a href="{{ .Site.BaseURL }}about/">About</a></li>
+      <li><a href="{{ .Site.BaseURL }}contact/">Contact</a></li>
+	</ul>
+  </nav>
+</header>

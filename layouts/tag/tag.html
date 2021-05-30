@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+<section>
+  <div>
+    <h1>Tag: {{ .Title | lower }}</h1>
+  </div>
+  <article>
+    <ul>
+        {{ range .Pages.ByDate.Reverse }}
+            <li><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a></li>
+        {{ end }}
+    </ul>
+  </article>
+</section>
+{{ partial "footer.html" . }}

@@ -1,0 +1,7 @@
+name = "fuck-js"
+description = "A minimal theme for Hugo without any JavaScript."
+author = "Max Stanley"
+license = "GPLv3"
+source_repo = "https://github.com/maxstanley/hugo-theme-fuck-js"
+tags = ["blog", "personal", "responsive", "minimal"]
+min_version = 0.01

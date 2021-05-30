@@ -1,0 +1,15 @@
+archetypeDir           = "archetypes"
+author                 = "Max Stanley"
+baseUrl                = "http://localhost:1313"
+buildDrafts            = false
+relativeURLs           = true
+canonifyUrls           = true
+contentDir             = "content"
+languageCode           = "en-gb"
+layoutDir              = "layouts"
+theme                  = "hugo-theme-fuck-js"
+themesDir              = "../.."
+title                  = "fuck-js"
+enableEmoji            = true
+DefaultContentLanguage = "en"
+
