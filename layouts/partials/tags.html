@@ -1,0 +1,9 @@
+{{ if isset .Params "tags" }} {{ if len .Params.tags }}
+{{ $baseurl := .Site.BaseURL }}
+<p>Tags:&nbsp;
+{{ range $i, $e := .Params.tags }}
+    {{if $i}},&nbsp;{{end}}
+    <a href="{{ $baseurl }}{{ $.Site.LanguagePrefix }}/tags/{{ . }}">{{ . }}</a>
+    {{ end }}
+</p>
+{{ end }}{{ end }}

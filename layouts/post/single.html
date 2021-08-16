@@ -3,20 +3,12 @@
   <div>
     <h1>{{ .Title }}</h1>
 	{{ partial "date_user.html" . }}
-    {{ $baseurl := .Site.BaseURL }}
   </div>
 
   <article>
   	{{ .Content }}
   </article>
 
-  {{ if isset .Params "tags" }} {{ if len .Params.tags }}
-  <p>Tags:&nbsp;
-    {{ range $i, $e := .Params.tags }}
-        {{if $i}},&nbsp;{{end}}
-        <a href="{{ $baseurl }}{{ $.Site.LanguagePrefix }}/tags/{{ . }}">{{ . }}</a>
-    {{ end }}
-  </p>
-  {{ end }} {{ end }}
+  {{ partial "tags.html" . }}
 </section>
 {{ partial "footer.html" . }}

@@ -5,16 +5,8 @@
 
   {{ partial "date_user.html" . }}
   
-  <p>{{ .Summary }}</p>
+  <p>{{ .Params.description }}</p>
 
-  {{ $baseurl := .Site.BaseURL }}
-  {{ if isset .Params "tags" }} {{ if len .Params.tags }}
-  <p>Tags:&nbsp;
-  {{ range $i, $e := .Params.tags }}
-      {{if $i}},&nbsp;{{end}}
-      <a href="{{ $baseurl }}{{ $.Site.LanguagePrefix }}/tags/{{ . }}">{{ . }}</a>
-      {{ end }}
-  </p>
-  {{ end }}{{ end }}
+  {{ partial "tags.html" . }}
   <p><a href="{{ .Permalink }}">Read more...</a></p>
 </section>
